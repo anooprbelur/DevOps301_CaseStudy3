@@ -1,10 +1,10 @@
 node {
  
  stage('Git CheckOut') {
-    git branch: 'main', url: 'https://github.com/amitvashisttech/devops301-mindtree-17Oct2020.git'
+    git branch: 'main', url: 'https://github.com/anooprbelur/DevOps301_CaseStudy3.git'
  }
  
- def project_path="02-Jenkins/petclinic-code"
+ def project_path="Jenkins/petclinic-code"
  
  dir(project_path) {
  
@@ -28,19 +28,19 @@ node {
     archive 'target/*.war'
  }
 
- stage('Getting Ready For Ansible') {
-    sh 'cp -rf target/*.war ../../05-Ansible/03-Tomcat/files/'
-    sh "echo '<h1> Task Build ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../../05-Ansible/03-Tomcat/files/jenkins.html"
- }
-  
- }
-
- def project_ansible="05-Ansible/03-Tomcat/"
- dir(project_ansible){
-  
- stage('Ansible Deployment') {
-    sh 'ansible-playbook webserver.yaml'
- }
+## stage('Getting Ready For Ansible') {
+##    sh 'cp -rf target/*.war ../../05-Ansible/03-Tomcat/files/'
+##    sh "echo '<h1> Task Build ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../../05-Ansible/03-Tomcat/files/jenkins.html"
+## }
+##  
+## }
+##
+## def project_ansible="05-Ansible/03-Tomcat/"
+## dir(project_ansible){
+##  
+## stage('Ansible Deployment') {
+##    sh 'ansible-playbook webserver.yaml'
+## }
 
  }
  
