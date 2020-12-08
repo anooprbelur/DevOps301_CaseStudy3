@@ -1,6 +1,6 @@
 node {
  
- git branch: 'main', url: 'https://github.com/amitvashisttech/devops301-mindtree-17Oct2020.git'
+ git branch: 'main', url: 'https://github.com/anooprbelur/DevOps301_CaseStudy3.git'
  
  sh 'mvn clean -f 02-Jenkins/petclinic-code/pom.xml'
  sh 'mvn compile -f 02-Jenkins/petclinic-code/pom.xml'
